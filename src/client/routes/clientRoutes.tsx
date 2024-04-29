@@ -1,6 +1,6 @@
 import ErrorView from "../views/ErrorView";
 import HomeView from "../views/home/HomeView";
-import ProductView from "../views/product/ProductView";
+import ProductView from "../views/product/ProductDetailView";
 import ProductsListView from "../views/productsList/ProductsListView";
 
 const HOME_ROUTE = "/";

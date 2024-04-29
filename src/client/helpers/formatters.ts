@@ -1,11 +1,5 @@
-type Price = {
-  currency: string;
-  amount: number;
-  decimals: number;
-};
-
-export const formatPrice = (price: Price): string => {
-  const formattedAmount = price.amount.toLocaleString("en-US", {
+export const formatPrice = (amount: number): string => {
+  const formattedAmount = amount.toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });

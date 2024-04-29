@@ -33,12 +33,12 @@ const ProductsListView = () => {
           <p className="breadcrumb-item">{products.categories?.[0]}</p>
           <div className="products-content">
             {products.items.map((product, index) => (
-              <>
+              <div key={product.id}>
                 <Product product={product} />
                 {products.items.length - 1 !== index && (
                   <div className="product-divider" />
                 )}
-              </>
+              </div>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Request } from "express";
 import url from "url";
 import apiClient from "../helpers/apiClient.js";
 import { normalizeProducts } from "../normalizers/normalizeProducts.js";
+import { normalizeProductDetail } from "../normalizers/normalizeProductDetail.js";
 
 const AUTHOR = {
   name: "Joshua",
@@ -14,4 +15,15 @@ export const getProducts = async (req: Request) => {
   const params = parsedUrl.query;
   const response = await apiClient({ url: "/sites/MLA/search", params });
   return { author: AUTHOR, ...normalizeProducts(response) };
+};
+
+export const getProductDetail = async (id: string) => {
+  const productDetail = await apiClient({ url: `/items/${id}` });
+  const productDescription = await apiClient({
+    url: `/items/${id}/description`,
+  });
+  return {
+    author: AUTHOR,
+    ...normalizeProductDetail({ productDetail, productDescription }),
+  };
 };

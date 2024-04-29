@@ -12,7 +12,7 @@ const findCategoriesOrderedByResults = (categories: Category[]): string[] => {
     .map((category) => category.name);
 };
 
-const getDecimals = (num: number, precision: number = 2): number => {
+export const getDecimals = (num: number, precision: number = 2): number => {
   const numStr = num.toFixed(precision);
   const decimalPart = numStr.split(".")[1];
   return Number(decimalPart);
