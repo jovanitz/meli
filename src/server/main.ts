@@ -7,10 +7,10 @@ app.get("/hello", (_, res) => {
   res.send("Hello Vite + React + TypeScript!");
 });
 
-function transformer(html: string, req: express.Request) {
+async function transformer(html: string, req: express.Request) {
   return html.replace(
     "<!-- placeholder -->",
-    `<meta name="custom" content="${req.url}"/>`
+    `<title>Producto</title><meta name="description" content="${req.url}"/>`
   );
 }
 
