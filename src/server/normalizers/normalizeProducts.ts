@@ -1,5 +1,3 @@
-import { get } from "http";
-
 type Category = {
   id: string;
   name: string;

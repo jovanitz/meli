@@ -27,3 +27,19 @@ export const getProductDetail = async (id: string) => {
     ...normalizeProductDetail({ productDetail, productDescription }),
   };
 };
+
+export const getProductSeo = async (id: string) => {
+  const productDetail = await apiClient({ url: `/items/${id}` });
+  return {
+    title: productDetail.title,
+    picture: productDetail.pictures?.[0].url,
+  };
+};
+
+export const getProductsSeo = async (search: string) => {
+  const response = await apiClient({
+    url: "/sites/MLA/search",
+    params: { q: search, limit: 4 },
+  });
+  return { author: AUTHOR, ...normalizeProducts(response) };
+};
