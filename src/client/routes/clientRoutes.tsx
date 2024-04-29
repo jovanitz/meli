@@ -4,8 +4,8 @@ import ProductView from "../views/product/ProductView";
 import ProductsListView from "../views/productsList/ProductsListView";
 
 const HOME_ROUTE = "/";
-const PRODUCTS_LIST_ROUTE = "/products-list";
-const PRODUCT = "/product/:id";
+const PRODUCTS_LIST_ROUTE = "/items";
+const PRODUCT = "/items/:id";
 
 export const CLIENT_ROUTES = [
   {

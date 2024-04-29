@@ -1,13 +1,23 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import "./searchBar.scss";
+import { useEffect, useRef, useState } from "react";
 
 const SearchBar = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get("search");
+  const navigate = useNavigate();
+
+  const [search, setSearch] = useState(searchQuery || "");
+
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const search = document.querySelector(
-      ".nav-form__search"
-    ) as HTMLInputElement;
-    console.log(search.value);
+    if (search) {
+      navigate(`/items?search=${search}`);
+    }
   };
+
+  useEffect(() => {}, [search]);
 
   return (
     <div className="nav">
@@ -16,6 +26,8 @@ const SearchBar = () => {
           Mercado Libre México - Donde comprar y vender de todo
         </a>
         <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
           className="nav-form__search"
           type="text"
           placeholder="Nunca dejes de buscar"

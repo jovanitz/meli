@@ -1,11 +1,9 @@
 import express from "express";
 import ViteExpress from "vite-express";
+import productsRouter from "./routes/productsRouter.js";
 
 const app = express();
-
-app.get("/hello", (_, res) => {
-  res.send("Hello Vite + React + TypeScript!");
-});
+app.use(productsRouter);
 
 async function transformer(html: string, req: express.Request) {
   return html.replace(

@@ -1,0 +1,30 @@
+.product {
+  display: flex;
+  height: 130px;
+  padding: 2rem 1rem;
+  cursor: pointer;
+
+  &__info {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    
+  }
+}
+
+.product-info {
+  display: flex;
+
+  &__price {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: .8rem;
+  }
+
+  &__free {
+    color: #00A650;
+    font-size: small;
+    padding-left: 1rem;
+    font-weight: 600;
+  }
+  
+}
