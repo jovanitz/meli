@@ -1,7 +1,9 @@
+import SearchBar from "../../components/searchBar/SearchBar";
+
 const HomeView = () => {
   return (
     <div>
-      <h1>HomeView</h1>
+      <SearchBar />
     </div>
   );
 };

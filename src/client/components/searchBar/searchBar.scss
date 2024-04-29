@@ -1,0 +1,71 @@
+
+.nav {
+  width: 100%;
+  background-color: #ffe600;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-form {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  padding: .8rem 0;
+
+  &__logo {
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -999px;
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.41/mercadolibre/logo_large_25years_v2.png);
+    height: 34px;
+    width: 134px;
+    display: flex;
+    position: static;
+    left: 0;
+    top: 0;
+    background-size: contain;
+  }
+
+  &__search {
+    display: flex;
+    flex: 1;
+    margin-left: 1rem;
+    padding-left: 10px;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+.gg-search {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 100%;
+  margin-left: -4px;
+  margin-top: -4px
+}
+
+.gg-search::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 12px
+}
